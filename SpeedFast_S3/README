@@ -1,0 +1,40 @@
+# SpeedFast - Sistema de entregas (Semana 3)
+
+Actividad sumativa: *Diseñando un sistema orientado a objetos con clases abstractas y polimorfismo*
+Materia Orientado a Objetos II.
+
+##Descripcion
+Sistema de gestion de entregas para **SpeedFast** que administra tres tipos de pedidos
+(Comida, Encomienda y Express), cada un con su propia logiaca de asignacion de repartidor y calculo de tiempo.
+La logica funcional (despachar, cancelar, ver hostorial) se descopla mediante interfaces.
+
+## Estructura del proyecto
+
+```
+Semana 3/
+├── .idea/                              Configuración del proyecto IntelliJ
+├── src/
+│   └── speedfast/
+│       ├── Main.java                   Punto de entrada / simulación
+│       ├── interfaces/                 Contratos (desacople)
+│       │   ├── Despachable.java        -> despachar()
+│       │   ├── Cancelable.java         -> cancelar()
+│       │   └── Rastreable.java         -> verHistorial()
+│       ├── modelo/                     Jerarquía de dominio
+│       │   ├── Pedido.java             Clase ABSTRACTA + implementa las 3 interfaces
+│       │   ├── PedidoComida.java       Subclase (herencia + sobrescritura)
+│       │   ├── PedidoEncomienda.java   Subclase (herencia + sobrescritura)
+│       │   └── PedidoExpress.java      Subclase (herencia + sobrescritura)
+│       └── servicio/                   Orquestación
+│           └── ControladorDeEnvios.java  Gestiona pedidos e historial de entregas
+└── README.md
+```
+
+Paquetes:
+- `speedfast` - clase `Main`.
+- `speedfast.interfaces` - interfaces `Despachable`,`Cancelable`,`Rastreable`.
+- `speedfast.modelo` - clases bastracta `Pedido` y sus subclases.
+- `speedfast.servicio` - `ControladorDeEnvios`.
+
+## Autor
+Matias Falconi
