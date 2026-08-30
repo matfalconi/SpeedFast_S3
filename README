@@ -12,7 +12,6 @@ La logica funcional (despachar, cancelar, ver hostorial) se descopla mediante in
 
 ```
 Semana 3/
-├── .idea/                              Configuración del proyecto IntelliJ
 ├── src/
 │   └── speedfast/
 │       ├── Main.java                   Punto de entrada / simulación
